@@ -11,7 +11,7 @@ Los nombres deben de ser strings, usuario debe de ser alfanumérico por lo que d
 El arreglo de calificaciones de películas almacenará objetos de cada una de las calificaciones.
 
 4. **¿Cuáles deben ser los modificadores de visibilidad de los miembros en cada clase?**\
-dsdas
+Los IDs son private, el resto es public
 
 5. **¿Qué parámetros serán requeridos por los métodos en sus clases?**\
 El método para calificar (calificarPeli()) requiere el ID de la pelicula a calificar, el nombre de usuario que calificará, y el puntaje que le otorgará a la película.
@@ -23,5 +23,5 @@ Se les asignara el valor que correspondan a la posición vacía (posición sigui
 Con un ciclo while, si está vacio asignarle el espacio
 
 8. **¿Cómo recorrerá únicamente las posiciones del arreglo que contienen calificaciones registradas?**\
-
+si esta vacio asignarle el espacio
 
