@@ -2,10 +2,10 @@
 ## Análisis
 
 1. **¿Qué propiedades y métodos tendrá cada clase?**\
-Perfil es la clase que maneja  
+Perfil es la clase que maneja los usuarios, y PeliculaCalificada es la clase que maneja las películas y las calificaciones 
 
 2. **¿Qué tipo deben tener las propiedades y métodos de cada clase?**\
-sdadfs
+Los nombres deben de ser strings, usuario debe de ser alfanumérico por lo que debe de ser un string, y las calificaciones se guardan como float
 
 3. **¿Cuál de las propiedades identificadas debe implementarse utilizando un arreglo? ¿Qué tipo de datos almacenará?**\
 El arreglo de calificaciones de películas almacenará objetos de cada una de las calificaciones.
@@ -23,5 +23,5 @@ Se les asignara el valor que correspondan a la posición vacía (posición sigui
 Con un ciclo while, si está vacio asignarle el espacio
 
 8. **¿Cómo recorrerá únicamente las posiciones del arreglo que contienen calificaciones registradas?**\
-si tienen cosa
+
 
