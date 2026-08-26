@@ -2,6 +2,7 @@ package view;
 
 public class Menu {
     public void showOpciones(){
+        System.out.println();
         System.out.println("1. Crear nuevo usuario");
         System.out.println("2. Registrar nueva calificación:");
         System.out.println("3. Consultar calificaciones");

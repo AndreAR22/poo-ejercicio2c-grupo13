@@ -13,6 +13,7 @@ public class Programa {
         Perfil[] usuarios = new Perfil[10];
         Menu menu = new Menu();
         Boolean running = true;
+        int usuarios_registrados = -1;
 
         while(running){
             menu.showOpciones();
@@ -22,6 +23,7 @@ public class Programa {
                     running = false;
                     break;
                 case 1:
+                    usuarios_registrados++;
                     scanner.nextLine();
                     System.out.print("Nombre completo: ");
                     String nombre = scanner.nextLine();
@@ -29,7 +31,7 @@ public class Programa {
                     String username = scanner.nextLine();
                     System.out.print("Edad: ");
                     int edad = scanner.nextInt();
-                    usuarios[0] = new Perfil(nombre, username, edad);
+                    usuarios[usuarios_registrados] = new Perfil(nombre, username, edad);
                     break;
                 
                 case 2:
@@ -38,7 +40,7 @@ public class Programa {
                     String NombrePelicula = scanner.nextLine();
                     System.out.print("Puntuación: ");
                     int score = scanner.nextInt();
-                    usuarios[0].calificarPeli(NombrePelicula, score);
+                    usuarios[usuarios_registrados].calificarPeli(NombrePelicula, score);
                     break;
 
 

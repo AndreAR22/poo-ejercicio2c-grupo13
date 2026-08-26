@@ -5,6 +5,7 @@ public class Perfil {
     private String usuario;
     private int edad;
     private PeliculaCalificada[] calificacion = new PeliculaCalificada[10];
+    private int numCalificaciones = 0; 
 
 
     public Perfil(String nombre, String usuario, int edad) {
@@ -30,9 +31,15 @@ public class Perfil {
     public void setEdad(int edad) {
         this.edad = edad;
     }
-   public void calificarPeli(String NombrePelicula, int score) {
-        this.calificacion[this.calificacion.length] = new PeliculaCalificada(NombrePelicula, score); 
-   }
+    public void calificarPeli(String NombrePelicula, int score) {
+        if (this.numCalificaciones < this.calificacion.length) {
+            this.calificacion[this.numCalificaciones] = new PeliculaCalificada(NombrePelicula, score); 
+            this.numCalificaciones++; 
+            System.out.println("La calificación de la película ha sido registrada");
+        } else {
+            System.out.println("Error: El arreglo de calificaciones está lleno.");
+        }
+    }
 
 
         
