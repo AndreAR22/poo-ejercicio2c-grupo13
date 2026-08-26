@@ -40,6 +40,13 @@ public class Perfil {
             System.out.println("Error: El arreglo de calificaciones está lleno.");
         }
     }
+    public void getCalificaciones(){
+        int i = 0;
+        while(this.calificacion[i] != null){
+            System.out.printf("Película %s se calificó con una puntuación de %d puntos\n",this.calificacion[i].getNombrePelicula(),this.calificacion[i].getCalificacion());
+            i++;
+        }
+    }
 
 
         

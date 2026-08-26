@@ -1,8 +1,8 @@
 package model;
 
 public class PeliculaCalificada {
-    String NombrePelicula;
-    int calificacion; 
+    private String NombrePelicula;
+    private int calificacion; 
 
     public PeliculaCalificada(String NombrePelicula, int score){
         this.NombrePelicula = NombrePelicula;
@@ -14,5 +14,8 @@ public class PeliculaCalificada {
     }
     public int getCalificacion() {
         return calificacion;
+    }
+    public String getNombrePelicula(){
+        return NombrePelicula;
     }
 }

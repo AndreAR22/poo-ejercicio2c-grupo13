@@ -42,6 +42,9 @@ public class Programa {
                     int score = scanner.nextInt();
                     usuarios[usuarios_registrados].calificarPeli(NombrePelicula, score);
                     break;
+                case 3:
+                    usuarios[usuarios_registrados].getCalificaciones();
+                    break;
 
 
             }
