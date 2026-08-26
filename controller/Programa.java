@@ -5,10 +5,14 @@ import java.util.Scanner;
 
 import model.*;
 import view.*;
+import controller.Peliculas;
 
 public class Programa {
 
     public void ejecutarPrograma() {
+        
+        Peliculas controladorPeliculas = new Peliculas();
+        
         Scanner scanner = new Scanner(System.in);
         ArrayList<Perfil> usuarios = new ArrayList<>();
         Menu menu = new Menu();
