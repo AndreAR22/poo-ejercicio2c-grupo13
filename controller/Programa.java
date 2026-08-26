@@ -1,20 +1,16 @@
 package controller;
 
-import java.util.ArrayList;
 import java.util.Scanner;
-
 import model.*;
 import view.*;
-import controller.Peliculas;
 
 public class Programa {
 
     public void ejecutarPrograma() {
         
-        Peliculas controladorPeliculas = new Peliculas();
         
         Scanner scanner = new Scanner(System.in);
-        ArrayList<Perfil> usuarios = new ArrayList<>();
+        Perfil[] usuarios = new Perfil[10];
         Menu menu = new Menu();
         Boolean running = true;
 
@@ -33,10 +29,16 @@ public class Programa {
                     String username = scanner.nextLine();
                     System.out.print("Edad: ");
                     int edad = scanner.nextInt();
-                    usuarios.add(new Perfil(nombre, username, edad));
+                    usuarios[0] = new Perfil(nombre, username, edad);
                     break;
                 
                 case 2:
+                    scanner.nextLine();
+                    System.out.print("Nombre de pelicula: ");
+                    String NombrePelicula = scanner.nextLine();
+                    System.out.print("Puntuación: ");
+                    int score = scanner.nextInt();
+                    usuarios[0].calificarPeli(NombrePelicula, score);
                     break;
 
 

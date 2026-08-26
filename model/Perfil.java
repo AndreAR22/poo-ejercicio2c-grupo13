@@ -4,7 +4,8 @@ public class Perfil {
     private String nombre;
     private String usuario;
     private int edad;
-    private PeliculaCalificada[] calificaciones = new PeliculaCalificada[10];
+    private PeliculaCalificada[] calificacion = new PeliculaCalificada[10];
+
 
     public Perfil(String nombre, String usuario, int edad) {
         this.nombre = nombre;
@@ -29,11 +30,10 @@ public class Perfil {
     public void setEdad(int edad) {
         this.edad = edad;
     }
-    /*public int getCalificaciones() {
-        return calificacion;
-    }*/
-    public void calificarPeli(int NoID, int calificacion) {
-        calificaciones[calificaciones.length] = new PeliculaCalificada(NoID, calificacion);
+   public void calificarPeli(String NombrePelicula, int score) {
+        this.calificacion[this.calificacion.length] = new PeliculaCalificada(NombrePelicula, score); 
+   }
+
+
         
     } 
-}
