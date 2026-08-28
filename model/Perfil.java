@@ -48,6 +48,72 @@ public class Perfil {
         }
     }
 
+    private void validarNumeroPelicula(int noID) {
+        if (noID < 1 || noID > numCalificaciones) {
+            throw new IllegalArgumentException("No existe una pelicula registrada con ese numero.");
+        }
+    }
 
-        
-    } 
+    public float consultarCalificacion(int noID) {
+        validarNumeroPelicula(noID);
+        return calificacion[noID - 1].getCalificacion();
+    }
+
+    public String consultarPelicula(int noID) {
+        validarNumeroPelicula(noID);
+        PeliculaCalificada pelicula = calificacion[noID - 1];
+        return String.format("Película %s se calificó con una puntuación de %d puntos",
+                pelicula.getNombrePelicula(), pelicula.getCalificacion());
+    }
+
+    public void modificarCalificacion(int noID, int nuevaCalificacion) {
+        validarNumeroPelicula(noID);
+        calificacion[noID - 1].setCalificacion(nuevaCalificacion);
+        System.out.println("La calificación de la película ha sido modificada");
+    }
+
+    public float calcularPromedio() {
+        if (numCalificaciones == 0) {
+            return 0;
+        }
+
+        int suma = 0;
+        for (int i = 0; i < numCalificaciones; i++) {
+            suma += calificacion[i].getCalificacion();
+        }
+        return (float) suma / numCalificaciones;
+    }
+
+    public PeliculaCalificada obtenerMejorCalificacion() {
+        if (numCalificaciones == 0) {
+            return null;
+        }
+
+        PeliculaCalificada mejor = calificacion[0];
+        for (int i = 1; i < numCalificaciones; i++) {
+            if (calificacion[i].getCalificacion() > mejor.getCalificacion()) {
+                mejor = calificacion[i];
+            }
+        }
+        return mejor;
+    }
+
+    public PeliculaCalificada obtenerPeorCalificacion() {
+        if (numCalificaciones == 0) {
+            return null;
+        }
+
+        PeliculaCalificada peor = calificacion[0];
+        for (int i = 1; i < numCalificaciones; i++) {
+            if (calificacion[i].getCalificacion() < peor.getCalificacion()) {
+                peor = calificacion[i];
+            }
+        }
+        return peor;
+    }
+
+    public int consultarEspaciosDisponibles() {
+        return calificacion.length - numCalificaciones;
+    }
+
+}
