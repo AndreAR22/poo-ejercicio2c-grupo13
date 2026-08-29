@@ -32,6 +32,7 @@ public class Perfil {
         this.edad = edad;
     }
     public void calificarPeli(String NombrePelicula, int score) {
+        validarMaximoCalificaciones();
         if (this.numCalificaciones < this.calificacion.length) {
             this.calificacion[this.numCalificaciones] = new PeliculaCalificada(NombrePelicula, score); 
             this.numCalificaciones++; 
@@ -40,6 +41,13 @@ public class Perfil {
             System.out.println("Error: El arreglo de calificaciones está lleno.");
         }
     }
+
+    private void validarMaximoCalificaciones() {
+        if (numCalificaciones >= calificacion.length) {
+            throw new IllegalArgumentException("No se pueden registrar más calificaciones. El límite es de 10.");
+        }
+    }
+
     public void getCalificaciones(){
         int i = 0;
         while(this.calificacion[i] != null){

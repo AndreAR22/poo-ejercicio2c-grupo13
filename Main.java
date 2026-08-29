@@ -6,5 +6,7 @@ public class Main {
         Programa programa = new Programa();
         programa.ejecutarPrograma();
 
+        // Modelo Vista Controlador mal implementado, pero se dejó así por conveniencia.
+
     }
 }
